@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>VAH Recommendation System</title>
+</head>
+<body class="home">
+    
+        <nav class="menu">
+
+            <ul>
+                <li><a class="menubutton" href="movies.html">Movies</a></li>
+                <li><a class="menubutton" href="webSeries.html">Web Series</a></li>
+                <li><a class="menubutton" href="books.html">Books</a></li>
+                <li><a class="menubutton" href="aboutUs.html">About Us</a></li>
+            </ul>
+            
+        </nav>
+
+        <div class="container">
+            <div class="quote-box">
+              <p id="quote">"Quote goes here..."</p><br>
+              <small id="speaker">- Speaker</small><br>
+              <small id="title">- Title</small>
+            </div>
+          </div>
+
+    <div id="tags"></div>
+    <div id="myNav" class="overlay">
+
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      
+        <!-- Overlay content -->
+        <div class="overlay-content" id="overlay-content"></div>
+        
+        <a href="javascript:void(0)" class="arrow left-arrow" id="left-arrow">&#8656;</a> 
+        
+        <a href="javascript:void(0)" class="arrow right-arrow" id="right-arrow" >&#8658;</a>
+
+      </div>
+
+    <!-- <script src="script.js"></script> -->
+    <script src="script/quotesScript.js"></script>
+</body>
+</html>
