@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+@media screen and (max-width: 500px) {
+    nav {
+        flex-direction: column;
+    }
+}
+
 :root {
     --primary-color:#000000;
     --secondary-color: #E50914;

@@ -54,3 +54,10 @@
   #btn:focus {
     outline: none;
   }
+
+  @media only screen and (max-width: 600px) {
+    .container {
+      margin: 50px auto;
+      width: 90%;
+    }
+  }
