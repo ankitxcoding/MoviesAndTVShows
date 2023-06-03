@@ -1,19 +1,32 @@
-const quote = document.getElementById('quote');
-const speaker = document.getElementById('speaker');
-const title = document.getElementById('title');
+async function fetchQuotes() {
+  const quote = document.getElementById('quote');
+  const speaker = document.getElementById('speaker');
+  const title = document.getElementById('title');
 
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '8a5224d2e5msh0fa51df553dceebp15d572jsna1bfc279e6fb',
-		'X-RapidAPI-Host': 'marvel-quote-api.p.rapidapi.com'
-	}
-};
+  const url = 'https://quotes-by-api-ninjas.p.rapidapi.com/v1/quotes';
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'df34ae637amsh410ff16bdcbdf0ep1d1961jsn230b9bd1ec5c',
+      'X-RapidAPI-Host': 'quotes-by-api-ninjas.p.rapidapi.com'
+    }
+  };
 
-fetch('https://marvel-quote-api.p.rapidapi.com/', options)
-  .then((res) => res.json())
-  .then((data) => {
-    quote.innerHTML = `"${data.Quote}"`;
-    speaker.innerHTML = `- ${data.Speaker}`;
-    title.innerHTML = `- ${data.Title}`;
-});
+  try {
+    const response = await fetch(url, options);
+    const data = await response.json();
+
+    if (Array.isArray(data) && data.length > 0) {
+      const result = data[0];
+      quote.textContent = result.quote;
+      speaker.textContent = `-${result.author}`;
+      title.textContent = `-${result.category}`;
+    } else {
+      console.error('No quotes found');
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+fetchQuotes();
